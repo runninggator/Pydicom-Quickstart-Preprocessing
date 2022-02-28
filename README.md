@@ -1,5 +1,5 @@
 # Pydicom Quickstart Preprocessing
- A simple guide to creating Pydicom preprocessing pipeline.
+ A simple guide to creating a Pydicom preprocessing pipeline.
 
 ## Overview
 Pydicom is a python tool for working with dicom datasets. It provides a simple framework for reading and modifying dicom files with a command-line-like interface (there is no graphical user interface). Pydicom is a Python tool, so if you’re familiar with Python or are looking to leverage the wide variety of existing Python packages into your medical imaging toolbox, then Pydicom is a great place to start. I use Pydicom in my own research and I’m excited to share with you some insights into creating a simple preprocessing pipeline.
