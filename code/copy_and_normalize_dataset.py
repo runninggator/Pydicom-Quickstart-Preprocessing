@@ -25,6 +25,9 @@ if (os.path.exists(full_path_to_result_dataset)):
     # The "f" in front of the string allows us to do inline string formatting.
     # Anything inside curly brackets will be evaluated and placed
     # into the string. "\n" creates a new line.
+    # The "input" function is built-in to python and pauses the program to
+    # get feedback from the user. Because we plan on deleting a directory, 
+    # we are asking the user for permission beforehand.
     user_input = input(f"Directory {full_path_to_result_dataset} already exists.\nDelete (y/n)?: ")
 
     if user_input == "y":
@@ -101,8 +104,8 @@ for dicom_filename in dicom_filenames:
     # we would just create the 3d Numpy file directly from our normalized 
     # data. However this guide creates a new directory to illustrate how 
     # to modify dicom files using Pydicom.
-    # PS: If you view the new directory in a dicom viewer, all the slices will
-    # look black, these is because each pixel value is so small (< 1).
+    # PS: These normalized dicom files will no longer look anatomically correct
+    # when viewed in a dicom viewer.
     result_full_filename = os.path.join(
         full_path_to_result_dataset, 
         f"{dicom_filename[0:-4]}_normalized{dicom_filename[-4:]}"

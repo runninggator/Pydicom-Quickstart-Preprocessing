@@ -54,10 +54,12 @@ for slice_num, dicom_filename in enumerate(dicom_filenames):
         # Advanced note: The "shape" attribute returns a Python list with the 
         # Numpy shape ie. [height, width]. 
         # The unpacking operator (*) unpacks an array into
-        # individual parameters.
+        # individual parameters. "np.zeros" creates a numpy array with all zeroes
+        # with the given shape.
         data_3d = np.zeros((len(dicom_filenames), *dicom_data.pixel_array.shape)).astype(dicom_data.pixel_array.dtype)
 
-    # Add this slice to the numpy array
+    # Add this slice to the numpy array. Array indexing allows us to overwrite
+    # individual slices.
     data_3d[slice_num,:,:] = dicom_data.pixel_array
 
 # Now save the numpy 3d data to your current directory
